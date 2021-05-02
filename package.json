@@ -10,9 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "package.json": "^2.0.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-moengage": "^6.1.4"
+    "react-native-moengage": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

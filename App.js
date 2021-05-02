@@ -1,23 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import ReactMoE, { MoEProperties } from 'react-native-moengage';
+import ReactMoE from 'react-native-moengage';
 import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, StyleSheet } from 'react-native';
 
 const App = () => {
 
-  ReactMoE.setUserUniqueID("abc@xyz.com");
-   
-  // Console.log("Moengage Integration ");
+  console.log("This is test page.");
 
+  ReactMoE.setEventListener("inAppCampaignShown", (inAppInfo) =>
+     console.log("inAppCampaignShown", inAppInfo)
+   );
+
+  ReactMoE.setEventListener("inAppCampaignClicked", (inAppInfo) =>
+    console.log("inAppCampaignClicked", inAppInfo)
+  );
+  
+  ReactMoE.setEventListener("inAppCampaignDismissed", (inAppInfo) =>
+  console.log("inAppCampaignDismissed", inAppInfo)
+);
+
+ReactMoE.setEventListener("inAppCampaignCustomAction", (inAppInfo) =>
+  console.log("inAppCampaignCustomAction", inAppInfo)
+);
+
+  ReactMoE.showInApp();
+  
   ReactMoE.initialize();
- 
+
   return (
     <ScrollView>
       <Text>Hello World</Text>
